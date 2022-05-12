@@ -16,9 +16,12 @@ public class Student {
     private String firstName;
     @Column(name= "last_name")
     private String lastName;
-    @JsonIgnore
+   // @JsonIgnore
     private String email;
 
+    @JoinColumn(name= "dept_id")
+    @ManyToOne
+    private Department department;
     public Long getId() {
         return id;
     }
@@ -47,8 +50,17 @@ public class Student {
         return email;
     }
 
+
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     /*public Long getStudentId() {
