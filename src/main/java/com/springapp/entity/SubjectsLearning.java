@@ -1,6 +1,7 @@
 package com.springapp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "subjects_learning")
@@ -18,6 +19,10 @@ public class SubjectsLearning {
     @JoinColumn(name= "student_id")
     @ManyToOne
     private Student student;
+
+
+
+
     public Long getId() {
         return id;
     }

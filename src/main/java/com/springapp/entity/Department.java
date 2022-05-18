@@ -1,6 +1,7 @@
 package com.springapp.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "department")
@@ -10,6 +11,9 @@ public class Department {
     private Long id;
     @Column(name="dept_name")
     private String deptName;
+
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+    private List<Student> students;
 
     public Long getId() {
         return id;

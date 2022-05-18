@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "student")
@@ -11,7 +12,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @JsonProperty("first_name")
+  //  @JsonProperty("first_name")
     @Column(name ="first_name")
     private String firstName;
     @Column(name= "last_name")
@@ -22,6 +23,9 @@ public class Student {
     @JoinColumn(name= "dept_id")
     @ManyToOne
     private Department department;
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private List<SubjectsLearning> subjectsLearnings;
     public Long getId() {
         return id;
     }
@@ -61,6 +65,14 @@ public class Student {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public List<SubjectsLearning> getSubjectsLearnings() {
+        return subjectsLearnings;
+    }
+
+    public void setSubjectsLearnings(List<SubjectsLearning> subjectsLearnings) {
+        this.subjectsLearnings = subjectsLearnings;
     }
 
     /*public Long getStudentId() {
