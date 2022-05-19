@@ -12,7 +12,7 @@ import org.yaml.snakeyaml.events.Event;
 
 import java.util.List;
 
-@RepositoryRestResource(path= "std", collectionResourceRel = "stds",excerptProjection = FirstProjection.class)
+@RepositoryRestResource(path= "std", collectionResourceRel = "stds")
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
     @RestResource(path="email"/*,exported = false*/)

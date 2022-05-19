@@ -9,9 +9,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import javax.persistence.Entity;
 
 @SpringBootApplication
-@ComponentScan({"com.springapp.controller","com.springapp.service"})
-@EntityScan("com.springapp.entity")
-@EnableJpaRepositories("com.springapp.repository")
+//@ComponentScan({"com.springapp.controller","com.springapp.service","com.springapp"})
+//@EntityScan("com.springapp.entity")
+//@EnableJpaRepositories("com.springapp.repository")
 public class CrudApplication  {
 
 	public static void main(String[] args) {

@@ -17,11 +17,14 @@ public class ValidatorImpl implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         if(target instanceof  Student){
-        Student student =(Student) target;
+            System.out.println("student name:  "+target);
+
+            Student student =(Student) target;
         if(student.getFirstName() == null || student.getFirstName().isEmpty()){
+            System.out.println("student name:  "+student.getFirstName());
             errors.rejectValue("firstName", "", "First name is required");
 
-        }
+        }}
         } /*else if (target instanceof Department) {
 
         }*/
@@ -41,5 +44,5 @@ public class ValidatorImpl implements Validator {
          *
          *
          * **/
-}
+
 }
